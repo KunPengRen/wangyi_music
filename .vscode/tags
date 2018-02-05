@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AES_encrypt	../app/powerapi/code.py	/^def AES_encrypt(text, key, iv):$/;"	kind:function	line:32
+CSRF_ENABLED	../config.py	/^CSRF_ENABLED = True$/;"	kind:variable	line:8
+DEBUG	../config.py	/^DEBUG = True$/;"	kind:variable	line:7
+MONGODB_SETTINGS	../config.py	/^MONGODB_SETTINGS = {'DB':'tpa_db'}/;"	kind:variable	line:10
+SECRET_KEY	../config.py	/^SECRET_KEY = 'you-will-never-guess'$/;"	kind:variable	line:9
+__init__	../app/powerapi/db/db_manger.py	/^    def __init__(self, dbconf, cursor=pymysql.cursors.DictCursor):$/;"	kind:member	line:10
+close	../app/powerapi/db/db_manger.py	/^    def close(self):$/;"	kind:member	line:24
+code.py	../app/powerapi/code.py	1;"	kind:file	line:1
+config.py	../config.py	1;"	kind:file	line:1
+data_process.py	../app/powerapi/data_process.py	1;"	kind:file	line:1
+database_params	../app/powerapi/settings.py	/^database_params = {$/;"	kind:variable	line:19
+db_manger.py	../app/powerapi/db/db_manger.py	1;"	kind:file	line:1
+example.py	../app/powerapi/example.py	1;"	kind:file	line:1
+example_print_user_and_content	../app/powerapi/data_process.py	/^def example_print_user_and_content(msg_list):$/;"	kind:function	line:8
+execute_insert	../app/powerapi/db/db_manger.py	/^    def execute_insert(self, dml):$/;"	kind:member	line:37
+execute_inset_many	../app/powerapi/db/db_manger.py	/^    def execute_inset_many(self, dml, args):$/;"	kind:member	line:69
+execute_query	../app/powerapi/db/db_manger.py	/^    def execute_query(self, dml, args=None):$/;"	kind:member	line:52
+first_param	../app/powerapi/settings.py	/^first_param = "{rid:\\"\\", offset:\\"%d\\", total:\\"true\\", limit:\\"%d\\", csrf_token:\\"\\"}"$/;"	kind:variable	line:11
+forth_param	../app/powerapi/settings.py	/^forth_param = "0CoJUm6Qyw8W8jud"$/;"	kind:variable	line:14
+get_comments	../app/powerapi/code.py	/^def get_comments(url, from_page=1, to_page=10):$/;"	kind:function	line:59
+get_encSecKey	../app/powerapi/code.py	/^def get_encSecKey():$/;"	kind:function	line:27
+get_json	../app/powerapi/code.py	/^def get_json(url, params, encSecKey):$/;"	kind:function	line:41
+get_json_by_url	../app/powerapi/code.py	/^def get_json_by_url(url):$/;"	kind:function	line:50
+get_params	../app/powerapi/code.py	/^def get_params():$/;"	kind:function	line:9
+get_params_by_page	../app/powerapi/code.py	/^def get_params_by_page(page_param):$/;"	kind:function	line:18
+headers	../app/powerapi/settings.py	/^headers = {$/;"	kind:variable	line:5
+insertmany	../app/powerapi/db/db_manger.py	/^    def insertmany(self, dml):$/;"	kind:member	line:91
+manage.py	../manage.py	1;"	kind:file	line:1
+manager	../manage.py	/^manager = Manager(app)$/;"	kind:variable	line:11
+msg	../app/powerapi/example.py	/^    msg = get_comments(url, from_page=1, to_page=5)$/;"	kind:variable	line:17
+music_id	../app/powerapi/example.py	/^    music_id = "436514312"$/;"	kind:variable	line:14
+musicmain.py	../app/musicmain.py	1;"	kind:file	line:1
+mysqlad	../app/powerapi/db/db_manger.py	/^class mysqlad(object):$/;"	kind:class	line:9
+page_limit	../app/powerapi/settings.py	/^page_limit = 20$/;"	kind:variable	line:10
+page_offset	../app/powerapi/settings.py	/^page_offset = 0$/;"	kind:variable	line:9
+re_connect	../app/powerapi/db/db_manger.py	/^    def re_connect(self):$/;"	kind:member	line:27
+second_param	../app/powerapi/settings.py	/^second_param = "010001"$/;"	kind:variable	line:12
+settings.py	../app/powerapi/settings.py	1;"	kind:file	line:1
+show_tb	../app/powerapi/db/db_manger.py	/^    def show_tb(self):$/;"	kind:member	line:84
+third_param	../app/powerapi/settings.py	/^third_param = "00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7"$/;"	kind:variable	line:13
+url	../app/powerapi/example.py	/^    url = base_url % music_id$/;"	kind:variable	line:15
