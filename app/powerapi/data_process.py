@@ -18,4 +18,5 @@ def example_print_user_and_content(msg_list):
             user_msg = comment["user"]
             nickname = user_msg["nickname"]
             content = comment["content"]
-            print("%s : %s" % (nickname, content))
+            user_id = comment["userId"]
+            print("%s : %s : %s" % (nickname, content,user_id))

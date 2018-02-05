@@ -55,7 +55,16 @@ def get_json_by_url(url):
     response = requests.post(url, headers=headers, data=data)
     return response.content
 
+def get_user_id(username):
+    pass
 
+def get_user_music_list():
+    pass
+     
+def get_music_comm_lines():
+    pass
+
+    
 def get_comments(url, from_page=1, to_page=10):
     """
     按照分页得到评论
