@@ -61,8 +61,9 @@ def get_user_id(username):
 def get_user_music_list():
     pass
      
-def get_music_comm_lines():
-    pass
+def get_music_comm_lines(music_id):
+    
+    
 
     
 def get_comments(url, from_page=1, to_page=10):
