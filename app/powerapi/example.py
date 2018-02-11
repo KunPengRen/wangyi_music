@@ -12,7 +12,11 @@ from musiclist import *
 
 if __name__ == "__main__":
     # 音乐的id
+<<<<<<< HEAD
     music_id = "436514312"
+=======
+    music_id = '28234970'
+>>>>>>> f264b668adcae7a79b01d830591f16583930bb10
     url = base_url % music_id
     # 得到第一页到第五页的评论内容
     msg = get_comments(url, from_page=1, to_page=5)

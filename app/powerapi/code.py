@@ -58,12 +58,12 @@ def get_json_by_url(url):
 def get_user_id(username):
     pass
 
-def get_user_music_list(userid):
-    
-    
-
-def get_music_comm_lines():
+def get_user_music_list():
     pass
+     
+def get_music_comm_lines(music_id):
+    
+    
 
     
 def get_comments(url, from_page=1, to_page=10):
