@@ -11,6 +11,7 @@ def example_print_user_and_content(msg_list):
     :param msg_list: 完整信息
     :return:
     """
+    i=0
     for msg in msg_list:
         msg_dict = json.loads(msg)
         comments = msg_dict["comments"]
@@ -21,4 +22,7 @@ def example_print_user_and_content(msg_list):
             content = comment["content"]
             time = comment["time"]
             print("%s : %s : %s" % (nickname, content,user_id))
+            i+=1
+    
+    print i
             

@@ -2766,12 +2766,10 @@ top.document.body.style.height = iframeHeight + 20 + 'px';
 </html>
 '''
 
-user_id ="254672398"
-print user_id
+
+#print user_id
 re_music = re.compile("song\?id=(\d*?)\"")
 
 music_list = re_music.findall(html_data)
 print music_list
-for music in music_list:
-    print music
 

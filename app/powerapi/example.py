@@ -9,16 +9,29 @@ from settings import *
 from data_process import *
 from musiclist import *
 
+iplist = list()
+result = list()
+with open('./ip.txt') as f :
+    for line in f.readlines():
+        iplist.append(line.strip())
+        
 
 if __name__ == "__main__":
     # 音乐的id
-<<<<<<< HEAD
-    music_id = "436514312"
-=======
-    music_id = '28234970'
->>>>>>> f264b668adcae7a79b01d830591f16583930bb10
-    url = base_url % music_id
-    # 得到第一页到第五页的评论内容
-    msg = get_comments(url, from_page=1, to_page=5)
-    # 下面就是输出用户名和用户评论内容的例子
-    example_print_user_and_content(msg)
+    #music_id = '28234970'
+    #print music_list
+    #print iplist
+    #music_list = ['29567189']
+    i = 1
+    for music_id in music_list:
+        i+=1
+        url = base_url % music_id
+        print 'now url is----'+ music_id
+        pgnum = int(get_comments_pgnum(url,iplist))/20
+        # 得到第一页到第五页的评论内容
+        msgs = get_comments(url, iplist,from_page=1, to_page=pgnum)
+        with open('./zjy.txt','w') as f :
+            for msg in msgs:
+                f.write(msg)
+
+        print '----The music %s is finisth now is the %d music' %(music_id,i)

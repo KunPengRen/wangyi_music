@@ -33,18 +33,19 @@ get_comments	../app/powerapi/code.py	/^def get_comments(url, from_page=1, to_pag
 get_encSecKey	../app/powerapi/code.py	/^def get_encSecKey():$/;"	kind:function	line:27
 get_json	../app/powerapi/code.py	/^def get_json(url, params, encSecKey):$/;"	kind:function	line:41
 get_json_by_url	../app/powerapi/code.py	/^def get_json_by_url(url):$/;"	kind:function	line:50
-get_music_comm_lines	../app/powerapi/code.py	/^def get_music_comm_lines():$/;"	kind:function	line:65
+get_music_comm_lines	../app/powerapi/code.py	/^def get_music_comm_lines(music_id):$/;"	kind:function	line:64
 get_params	../app/powerapi/code.py	/^def get_params():$/;"	kind:function	line:9
 get_params_by_page	../app/powerapi/code.py	/^def get_params_by_page(page_param):$/;"	kind:function	line:18
 get_user_id	../app/powerapi/code.py	/^def get_user_id(username):$/;"	kind:function	line:58
-get_user_music_list	../app/powerapi/code.py	/^def get_user_music_list(userid):$/;"	kind:function	line:61
+get_user_music_list	../app/powerapi/code.py	/^def get_user_music_list():$/;"	kind:function	line:61
 headers	../app/powerapi/settings.py	/^headers = {$/;"	kind:variable	line:5
 insertmany	../app/powerapi/db/db_manger.py	/^    def insertmany(self, dml):$/;"	kind:member	line:91
 manage.py	../manage.py	1;"	kind:file	line:1
 manager	../manage.py	/^manager = Manager(app)$/;"	kind:variable	line:11
 models.py	../app/models.py	1;"	kind:file	line:1
-msg	../app/powerapi/example.py	/^    msg = get_comments(url, from_page=1, to_page=5)$/;"	kind:variable	line:18
-music_id	../app/powerapi/example.py	/^    music_id = "436514312"$/;"	kind:variable	line:15
+msg	../app/powerapi/example.py	/^    msg = get_comments(url, from_page=1, to_page=5)$/;"	kind:variable	line:22
+music_id	../app/powerapi/example.py	/^    music_id = "436514312"$/;"	kind:variable	line:16
+music_id	../app/powerapi/example.py	/^    music_id = '28234970'$/;"	kind:variable	line:18
 music_list	../app/powerapi/musiclist.py	/^music_list = re_music.findall(html_data)$/;"	kind:variable	line:2773
 musicid	../app/models.py	/^    musicid = db.StringField(required=True)$/;"	kind:variable	line:14
 musiclist.py	../app/powerapi/musiclist.py	1;"	kind:file	line:1
@@ -59,6 +60,6 @@ settings.py	../app/powerapi/settings.py	1;"	kind:file	line:1
 show_tb	../app/powerapi/db/db_manger.py	/^    def show_tb(self):$/;"	kind:member	line:84
 third_param	../app/powerapi/settings.py	/^third_param = "00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7"$/;"	kind:variable	line:13
 time	../app/models.py	/^    time = db.StringField(required=True)$/;"	kind:variable	line:15
-url	../app/powerapi/example.py	/^    url = base_url % music_id$/;"	kind:variable	line:16
+url	../app/powerapi/example.py	/^    url = base_url % music_id$/;"	kind:variable	line:20
 user_id	../app/powerapi/musiclist.py	/^user_id ="254672398"$/;"	kind:variable	line:2769
 userid	../app/models.py	/^    userid = db.StringField(required=True)$/;"	kind:variable	line:13

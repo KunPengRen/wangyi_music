@@ -3,7 +3,12 @@
 from Crypto.Cipher import AES
 import base64
 import requests
+import json
+import time
 from settings import *
+
+agentid = 0
+ipid = 0
 
 
 def get_params():
@@ -38,13 +43,33 @@ def AES_encrypt(text, key, iv):
     return encrypt_text
 
 
-def get_json(url, params, encSecKey):
+def get_json(url,iplist, params, encSecKey):
     data = {
         "params": params,
         "encSecKey": encSecKey
     }
-    response = requests.post(url, headers=headers, data=data)
-    return response.content
+    global ipid
+    ip = iplist[ipid]
+    if(ip.find('HTTPS')):
+        proxy = {'HTPP':ip}
+    else:
+        proxy = {'HTTPS':ip}
+    ipid+=1
+    if(ipid>=len(iplist)-1):
+        ipid=0
+        global agentid
+        agentid=(agentid+1)%10
+        time.sleep(10)
+        print '-------time sleep 10s'
+    headers['User-Agent']=useragentlist[agentid]
+
+    try:
+        response = requests.post(url, headers=headers,proxies=proxy, data=data,timeout=2)
+        return response.content
+    except Exception,e:
+        iplist.remove(iplist[ipid-1])
+        print 'exception'
+        get_json(url,iplist, params, encSecKey)
 
 
 def get_json_by_url(url):
@@ -52,6 +77,8 @@ def get_json_by_url(url):
         "params": get_params(),
         "encSecKey": get_encSecKey()
     }
+    agentid=(agentid+1)%10
+    headers['User-Agent']=useragentlist[agentid]
     response = requests.post(url, headers=headers, data=data)
     return response.content
 
@@ -61,12 +88,20 @@ def get_user_id(username):
 def get_user_music_list():
     pass
      
-def get_music_comm_lines(music_id):
+def get_comments_pgnum(url,iplist):
+    offset = 0
+    limit = page_limit
+    page_param = first_param % (offset, limit)
+    params = get_params_by_page(page_param)
+    encSecKey = get_encSecKey()
+    json_text = get_json(url,iplist, params, encSecKey)
+    return json.loads(json_text)['total']
+    
     
     
 
     
-def get_comments(url, from_page=1, to_page=10):
+def get_comments(url,iplist, from_page=1, to_page=10):
     """
     按照分页得到评论
     :param url: 歌曲评论api
@@ -81,7 +116,23 @@ def get_comments(url, from_page=1, to_page=10):
         page_param = first_param % (offset, limit)
         params = get_params_by_page(page_param)
         encSecKey = get_encSecKey()
-        json_text = get_json(url, params, encSecKey)
-        result.append(json_text)
+        json_text = get_json(url,iplist, params, encSecKey)
+        #print json_text
+        try:
+            msg_dict = json.loads(json_text)
+            comments = msg_dict["comments"]
+            print 'the pagenum is %d result lines is %d' %(offset,len(comments))
+            for comment in comments:
+                user_msg = comment["user"]
+                userid = user_msg["userId"]
+                if(user_id==userid):
+                    
+                    content = comment["content"]
+                    print content
+                    time = comment["time"]
+                    result.append(url+"-----comment:"+content+"---time:"+time+'/n')
+        except Exception,e:
+            print e
+            print 'the pagenum is %d is bad ' %(offset)
     return result
 
